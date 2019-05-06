@@ -19,4 +19,10 @@ class ProductControlletr extends Controller
  	    	$data['products'] = $this->product->getProduct();
  		    return response()->json($data, 200);
  	   }
+
+     public function store(Request $request)
+    {
+       $this->cart->saveProduct($request->all());
+       return response()->json('success');
+    }
 }

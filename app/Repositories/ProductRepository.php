@@ -14,5 +14,10 @@ class ProductRepository
   {
     return $this->product->get();
   }
-  
+
+  public function saveProduct(array $data) : Product
+  {
+    return $this->product->create($data);
+  }
+
 }
